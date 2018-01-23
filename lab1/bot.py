@@ -7,7 +7,6 @@ emoArray = []
 @module.rule('')
 def hi(bot, trigger):
     # emoArray.append(emo)
-    emo.detect_emotion_in_raw(bot, trigger)
-
+    emo(trigger)
     # bot.say('Hi, ' + trigger.nick)
     # print emo.detect_emotion_in_raw(bot, trigger)
