@@ -11,26 +11,33 @@ from sklearn.metrics import accuracy_score as acc
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import make_scorer
 
+"""""
 
+See iPython notebook "MyNotebook.ipynb" for an updated version.
+
+"""""
 df = pd.read_csv('bank-additional-full.csv', delimiter = ";")
+df.head
 
 # Creates copy of df
 df_copy = df
 
-
-
-
 # Convert to dummies
 df_dummies = pd.get_dummies(df)
+df_dummies.head()
+
 # Deletes columns "y_no" and "duration"
 del df_dummies["y_no"]
 del df_dummies["duration"]
+df_dummies.head()
+
 # print df_dummies
 
 # Generates histogram for y_yes
 x_ax = df_dummies["y_yes"]
 plot = sns.distplot(x_ax, kde = False, rug = False)
 plot.figure.savefig("y_yes_Histo.png")
+
 
 train_dummies = df_dummies
 del train_dummies["y_yes"]
