@@ -13,12 +13,12 @@
 
 <H2> Standard Deviation Results </H2>
 
-Standard Deviation:
-STD for Current Fleet:  6.40180546218
-STD Lower Bound : 5.770004
-STD Upper Bound: 6.899638
+<h3>Standard Deviation</H3>
+<p>STD for Current Fleet: 6.40180546218</p>
+<p>STD Lower Bound: 5.770004</p>
+<p>STD Upper Bound: 6.899638</p>
 
-STD for Proposed Fleet:  6.06893054515
-STD Lower Bound : 5.151614
-STD Upper Bound: 6.847623
+<p>STD for Proposed Fleet: 6.06893054515</p>
+<p>STD Lower Bound: 5.151614</p>
+<p>STD Upper Bound: 6.847623</p>
 
