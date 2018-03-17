@@ -15,24 +15,30 @@ df2 = pd.read_csv(file2)
 df1 = df1.dropna(axis=0, how='any')
 df2 = df2.dropna(axis=0, how='any')
 
+# df1.plot(kind = 'scatter', x = "Number", y = "Current Fleet")
+# df2.plot(kind = 'scatter', x = "Number", y = "New Fleet")
+# df1.plot(kind = 'hist', x = 'Number', y = "Current Fleet")
+# df2.plot(kind = 'hist', x = 'Number', y = "New Fleet")
 
-df1.plot(kind = 'scatter', x = 'Current Fleet', y = "Number")
 
-df2.plot(kind = 'scatter', x = 'New Fleet', y = "Number")
+data1 = df1.values.T[1]
+data2 = df2.values.T[1]
 
-df1.plot(kind = 'hist', x = 'Number', y = "Current Fleet")
+sns_plot = sns.distplot(df1, bins = 20, kde = False, rug = True).get_figure()
+sns_plot2 = sns.distplot(df2, bins = 20, kde = False, rug = True).get_figure()
 
-df2.plot(kind = 'hist', x = 'Number', y = "New Fleet")
 
-show = raw_input("Output scatter plot and histogram? ")
+
+show = raw_input("Would you like to save plots? ")
 
 if show == 'yes' or show == 'y':
-    plt.show()
+    sns_plot.savefig("scaterplot_currentFleet.png", bbox_inches='tight')
+    sns_plot2.savefig("scaterplot_newFleet.png", bbox_inches='tight')
 elif show != 'yes' or show != 'y':
     print "OK"
 
 print "Current Fleet STD"
-print df1.std(), "\n"
+print np.std(data1), "\n"
 
 print "Current Fleet STD"
-print df2.std(), "\n"
+print np.std(data2), "\n"
